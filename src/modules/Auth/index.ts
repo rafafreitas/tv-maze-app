@@ -1,1 +1,1 @@
-export { default as FirstAccess } from './screens/FirstAccess';
+export { default as AuthFirstAccess } from './screens/FirstAccess';

@@ -18,6 +18,7 @@ export interface IStatusPalette {
   warning: string;
   error: string;
   info: string;
+  dark: string;
   black: string;
   gray: string;
   white: string;
@@ -30,7 +31,8 @@ export const THEME: IStatusPalette = {
   warning: '#edc63a',
   error: '#f44849',
   info: '#48daf4',
-  black: '#0f0f0f',
+  dark: '#0f0f0f',
+  black: '#000000',
   gray: '#7a7575',
   white: '#fff',
 };

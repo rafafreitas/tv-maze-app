@@ -1,8 +1,5 @@
 const AUTH_NAVIGATOR_SCREENS = {
   FIRST_ACCESS: 'FirstAccessScreen',
-  PREPARE_AUTH: 'PrepareAuthScreen',
-  LOGIN: 'LoginScreen',
-  REGISTER_LOGIN_ACCESS: 'RegisterLoginAccess',
 };
 
 const PRIVATE_NAVIGATOR_SCREENS = {

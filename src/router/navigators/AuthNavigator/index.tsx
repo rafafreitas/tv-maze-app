@@ -13,11 +13,21 @@ const screens = [
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
+const defaultScreenOptions = {
+  headerShown: false,
+  gestureEnabled: true,
+};
+
 export default function AuthNavigator(initialParams = {}) {
+  const options = {
+    ...defaultScreenOptions,
+    ...initialParams,
+  };
+
   return (
     <Navigator
       initialRouteName={SCREENS.AUTH.FIRST_ACCESS}
-      screenOptions={initialParams}
+      screenOptions={options}
     >
       {screens.map((screen: IScreen) => (
         <Screen

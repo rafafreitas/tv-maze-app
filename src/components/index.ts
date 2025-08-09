@@ -1,4 +1,2 @@
-import Button from './atoms/Button';
-import Text from './atoms/Text';
-
-export { Button, Text };
+export * from './atoms';
+export * from './Icons';

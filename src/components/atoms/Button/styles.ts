@@ -35,7 +35,7 @@ export const ButtonStyle = ({ variant, disabled, size, type }: IButton) => {
       alignItems: 'center',
       justifyContent: 'center',
       gap: 8,
-      borderRadius: 30,
+      borderRadius: 10,
       width: '100%',
       flexGrow: 1,
       height: size === 'NORMAL' ? 45 : 30,

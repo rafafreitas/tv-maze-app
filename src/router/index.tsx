@@ -5,7 +5,7 @@ import 'react-native-gesture-handler';
 
 import { NAVIGATORS } from './constants';
 import { navigationRef } from './actions';
-import { AuthNavigator } from './navigators';
+import { AuthNavigator, PrivateNavigator } from './navigators';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -27,6 +27,12 @@ function Router() {
         <Screen
           name={NAVIGATORS.AUTH_NAVIGATOR}
           component={AuthNavigator}
+          options={{ gestureEnabled: true }}
+        />
+
+        <Screen
+          name={NAVIGATORS.PRIVATE_NAVIGATOR}
+          component={PrivateNavigator}
           options={{ gestureEnabled: true }}
         />
       </Navigator>

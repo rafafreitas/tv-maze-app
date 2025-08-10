@@ -38,4 +38,33 @@ export const styles = StyleSheet.create({
     width: 110,
     height: 30,
   },
+  // BOTTOM
+  headerContentPaddingBottom: {
+    paddingBottom: PADDING_DEFAULT,
+  },
+  headerBodyContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  titleContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: PADDING_DEFAULT,
+  },
+  subTitleContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  line: {
+    width: '100%',
+    borderStyle: 'solid',
+    borderWidth: 0.5,
+  },
 });

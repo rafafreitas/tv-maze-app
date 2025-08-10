@@ -1,3 +1,3 @@
-import { HeaderTop } from './Header';
+import { HeaderTop, HeaderBody } from './Header';
 
-export { HeaderTop };
+export { HeaderTop, HeaderBody };

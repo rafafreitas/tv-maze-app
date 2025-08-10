@@ -97,9 +97,7 @@ export default function Home() {
         picture={item.image?.medium}
         premiered={item?.premiered || '-'}
         ended={item?.ended || '-'}
-        onPress={() =>
-          navigate(SCREENS.PRIVATE.HOME.ITEM_VIEW, { memory: item })
-        }
+        onPress={() => navigate(SCREENS.PRIVATE.HOME.ITEM_VIEW, { show: item })}
       />
     );
   };

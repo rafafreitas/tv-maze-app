@@ -56,7 +56,7 @@ export interface ITvMazeShow {
     medium: string;
     original: string;
   };
-  summary: string | null;
+  summary: string;
   updated: number;
   _links: {
     self: {

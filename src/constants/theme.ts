@@ -22,6 +22,7 @@ export interface IStatusPalette {
   black: string;
   gray: string;
   white: string;
+  background: string;
 }
 
 export const THEME: IStatusPalette = {
@@ -34,10 +35,12 @@ export const THEME: IStatusPalette = {
   dark: '#0f0f0f',
   black: '#000000',
   gray: '#7a7575',
-  white: '#fff',
+  white: '#FFFFFF',
+  background: '#f6f5f5',
 };
 
 export const OPACITY_HEX = {
+  H_10: '1A',
   H_13: '21',
   H_20: '34',
   H_30: '4D',

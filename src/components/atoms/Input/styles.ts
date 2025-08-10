@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   inputContainerRow: {
     width: '100%',
-    height: 54,
+    height: 45,
     flexDirection: 'row',
     borderColor: THEME.black,
     borderWidth: 1,
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
   input: {
     flexDirection: 'row',
     flex: 1,
-    height: 54,
+    height: 45,
     paddingLeft: 20,
     paddingRight: 20,
     color: THEME.black,

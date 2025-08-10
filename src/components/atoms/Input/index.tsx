@@ -74,7 +74,7 @@ const InputDefault = forwardRef<IInputRefProps | undefined, IInput>(
       <View style={styles.inputContainer}>
         {label && (
           <View style={styles.labelContainer}>
-            <Text variant={error ? 'error' : 'white'}>{label}</Text>
+            <Text variant={error ? 'error' : 'black'}>{label}</Text>
           </View>
         )}
         <View style={styles.inputContainerRow}>

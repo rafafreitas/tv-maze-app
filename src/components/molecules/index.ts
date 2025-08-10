@@ -1,3 +1,4 @@
 import { HeaderTop, HeaderBody } from './Header';
+import Accordion from './Accordion';
 
-export { HeaderTop, HeaderBody };
+export { Accordion, HeaderTop, HeaderBody };

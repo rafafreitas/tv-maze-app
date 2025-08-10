@@ -10,6 +10,7 @@ const PRIVATE_NAVIGATOR_SCREENS = {
   HOME: {
     HOME: 'HomeScreen',
     ITEM_VIEW: 'FavoritesViewScreen',
+    EPISODE_VIEW: 'EpisodeViewScreen',
   },
   SETTINGS: {
     HOME: 'SettingsHomeScreen',

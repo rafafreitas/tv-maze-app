@@ -11,6 +11,9 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   group: {},
+  groupSeason: {
+    gap: 10,
+  },
   imageContainer: {
     marginTop: 10,
     width: '100%',

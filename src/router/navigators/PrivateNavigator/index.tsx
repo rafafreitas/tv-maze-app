@@ -7,7 +7,11 @@ import withBaseNavigator from './base-navigator';
 import { SCREENS, TAB_NAVIGATORS } from '@src/router/constants';
 import { THEME } from '@src/constants';
 
-import { HomeScreen, ShowViewScreen } from '@src/modules/Home';
+import {
+  HomeScreen,
+  ShowViewScreen,
+  EpisodeViewScreen,
+} from '@src/modules/Home';
 import { styles } from './style';
 import { IconHome, IconSettings, IconStar } from '@src/components';
 
@@ -21,6 +25,10 @@ const SCREENS_HOME = [
   {
     name: SCREENS.PRIVATE.HOME.ITEM_VIEW,
     component: ShowViewScreen,
+  },
+  {
+    name: SCREENS.PRIVATE.HOME.EPISODE_VIEW,
+    component: EpisodeViewScreen,
   },
 ];
 

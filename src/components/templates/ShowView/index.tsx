@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { ScrollView, View, Image } from 'react-native';
 import RenderHtml from 'react-native-render-html';
 
 import {
+  Accordion,
   Text,
   Skeleton,
   Button,
@@ -11,10 +12,16 @@ import {
   Wrapper,
 } from '@src/components';
 import { THEME } from '@src/constants';
-import { ITvMazeShow } from '@src/types';
+import {
+  ITvMazeShow,
+  ITvMazeEpisode,
+  ITvMazeEpisodeBySeason,
+} from '@src/types';
 import { goBack } from '@src/router/actions';
+import { GetEpisodes } from '@src/services';
 import { styles } from './style';
 import { resizeImage, SCREEN_WIDTH } from '@src/helpers';
+import ShowItem from '@src/modules/Home/components/ShowItem';
 
 type TGroup = {
   label: string;
@@ -37,7 +44,8 @@ type IShowView = {
   show: ITvMazeShow;
   isFavorite: boolean;
   loading: boolean;
-  onFavoriteAction?: () => void;
+  onFavoriteAction: () => void;
+  onEpisodesViewAction: (episode: ITvMazeEpisode) => void;
 };
 
 export default function ShowView({
@@ -45,8 +53,45 @@ export default function ShowView({
   isFavorite,
   loading,
   onFavoriteAction,
+  onEpisodesViewAction,
 }: IShowView) {
   const dimensions = resizeImage(300);
+
+  const [episodesList, setEpisodesList] = useState<ITvMazeEpisodeBySeason[]>(
+    [],
+  );
+
+  const getEpisodesList = useCallback(async (showId: number) => {
+    try {
+      const { data } = await GetEpisodes({ id: showId });
+
+      const grouped = data.reduce<Record<number, ITvMazeEpisode[]>>(
+        (acc, episode) => {
+          if (!acc[episode.season]) {
+            acc[episode.season] = [];
+          }
+          acc[episode.season].push(episode);
+          return acc;
+        },
+        {},
+      );
+
+      const preparedList: ITvMazeEpisodeBySeason[] = Object.entries(
+        grouped,
+      ).map(([season, episodes]) => ({
+        season: Number(season),
+        episodes,
+      }));
+
+      setEpisodesList(preparedList);
+    } catch (e) {
+      // TODO - Create error flow
+    }
+  }, []);
+
+  useEffect(() => {
+    getEpisodesList(show.id);
+  }, [getEpisodesList, show]);
 
   return (
     <Wrapper
@@ -110,6 +155,33 @@ export default function ShowView({
             <RenderHtml
               contentWidth={SCREEN_WIDTH}
               source={{ html: show.summary }}
+            />
+          </View>
+
+          <View style={styles.groupSeason}>
+            <Text fontSize={16} bold>
+              Seasons
+            </Text>
+            <Accordion
+              sections={episodesList.map(value => ({
+                id: value.season.toString(),
+                title: `Season ${value.season}`,
+                content: (
+                  <>
+                    {value.episodes.map(episode => (
+                      <View key={episode.id}>
+                        <ShowItem
+                          picture={episode.image.medium}
+                          name={episode.name}
+                          season={episode.season}
+                          number={episode.number}
+                          onPress={() => onEpisodesViewAction(episode)}
+                        />
+                      </View>
+                    ))}
+                  </>
+                ),
+              }))}
             />
           </View>
 

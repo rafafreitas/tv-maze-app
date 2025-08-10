@@ -1,7 +1,9 @@
 import { Http } from './http';
-import { ITvMazeShow } from '@src/types';
+import { ITvMazeShow, ITvMazeEpisode } from '@src/types';
 
 type TListShow = ITvMazeShow[];
+
+type TListEpisodes = ITvMazeEpisode[];
 
 type TShowByName = {
   score: number;
@@ -23,6 +25,10 @@ interface IGetShowById {
   id: number;
 }
 
+interface IGetEpisodes {
+  id: number;
+}
+
 export const GetShows = ({ page }: IGetShow) =>
   Http().get<TListShow>(`/shows`, { params: { page } });
 
@@ -31,3 +37,6 @@ export const GetShowsByName = ({ page, q }: IGetShowByName) =>
 
 export const GetShowById = ({ id }: IGetShowById) =>
   Http().get<ITvMazeShow>(`/shows/${id}`);
+
+export const GetEpisodes = ({ id }: IGetEpisodes) =>
+  Http().get<TListEpisodes>(`/shows/${id}/episodes`);

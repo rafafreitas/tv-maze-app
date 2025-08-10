@@ -4,4 +4,6 @@ export { default as IconLock } from './List/IconLock';
 export { default as IconCircleX } from './List/IconCircleX';
 export { default as IconSettings } from './List/IconSettings';
 export { default as IconArrowLeft } from './List/IconArrowLeft';
+export { default as IconChevronDown } from './List/IconChevronDown';
+export { default as IconChevronUp } from './List/IconChevronUp';
 export { default as IconChevronRight } from './List/IconChevronRight';

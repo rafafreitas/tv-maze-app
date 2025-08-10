@@ -7,8 +7,10 @@ import { styles } from './style';
 interface IShowItemProps {
   picture: string;
   name: string;
-  premiered: string;
-  ended: string;
+  premiered?: string;
+  ended?: string;
+  season?: number;
+  number?: number;
   onPress: () => void;
 }
 
@@ -17,6 +19,8 @@ const ShowItem = ({
   name,
   premiered,
   ended,
+  season,
+  number,
   onPress,
 }: IShowItemProps) => {
   return (
@@ -30,12 +34,29 @@ const ShowItem = ({
             {name}
           </Text>
           <View>
-            <Text bold fontSize={12}>
-              Premiered: <Text fontSize={12}>{premiered}</Text>
-            </Text>
-            <Text bold fontSize={12}>
-              Ended: <Text fontSize={12}>{ended}</Text>
-            </Text>
+            {premiered && (
+              <Text bold fontSize={12}>
+                Premiered: <Text fontSize={12}>{premiered}</Text>
+              </Text>
+            )}
+
+            {ended && (
+              <Text bold fontSize={12}>
+                Ended: <Text fontSize={12}>{ended}</Text>
+              </Text>
+            )}
+
+            {season && (
+              <Text bold fontSize={12}>
+                Season: <Text fontSize={12}>{season}</Text>
+              </Text>
+            )}
+
+            {number && (
+              <Text bold fontSize={12}>
+                Number: <Text fontSize={12}>{number}</Text>
+              </Text>
+            )}
           </View>
         </View>
       </View>

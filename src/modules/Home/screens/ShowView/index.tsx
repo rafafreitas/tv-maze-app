@@ -1,7 +1,9 @@
 import React from 'react';
+import { ITvMazeEpisode, ITvMazeShow } from '@src/types';
 import { ShowViewTemplate } from '@src/components';
-import { ITvMazeShow } from '@src/types';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { navigate } from '@src/router/actions.ts';
+import { SCREENS } from '@src/router/constants';
 
 type ScreenParam = {
   ShowView: {
@@ -18,12 +20,17 @@ export default function ShowView({
     //
   };
 
+  const onEpisodesViewAction = (episode: ITvMazeEpisode) => {
+    navigate(SCREENS.PRIVATE.HOME.EPISODE_VIEW, { episode: episode });
+  };
+
   return (
     <ShowViewTemplate
       show={show}
       loading={false}
       isFavorite={false}
       onFavoriteAction={onFavoriteAction}
+      onEpisodesViewAction={onEpisodesViewAction}
     />
   );
 }

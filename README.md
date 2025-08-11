@@ -3,6 +3,9 @@
 Application developed as part of the React Native challenge, using the [TVMaze API](https://www.tvmaze.com/api) to list and retrieve series and episodes information.  
 The project follows best coding practices and architecture principles, with special attention to UX and performance.
 
+<p align="center">
+  <img src="docs/screenshots/welcome.png" alt="Welcome" width="300"/>
+</p>
 ---
 
 ## 🚀 Implemented Features

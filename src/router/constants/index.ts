@@ -13,8 +13,8 @@ const PRIVATE_NAVIGATOR_SCREENS = {
     ITEM_VIEW: 'FavoritesViewScreen',
     EPISODE_VIEW: 'EpisodeFavoritesViewScreen',
   },
-  SETTINGS: {
-    HOME: 'SettingsHomeScreen',
+  PEOPLE: {
+    HOME: 'PeopleHomeScreen',
   },
 };
 
@@ -26,7 +26,7 @@ export const NAVIGATORS = {
 export const TAB_NAVIGATORS = {
   HOME_TAB_NAVIGATOR: 'HomeTabNavigator',
   FAVORITE_TAB_NAVIGATOR: 'MemoryTabNavigator',
-  SETTINGS_TAB_NAVIGATOR: 'NotificationTabNavigator',
+  PEOPLE_TAB_NAVIGATOR: 'PeopleTabNavigator',
 };
 
 export const SCREENS = {

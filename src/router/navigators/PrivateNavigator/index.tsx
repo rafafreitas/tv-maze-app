@@ -18,8 +18,11 @@ import {
   ShowFavoriteViewScreen,
   EpisodeFavoriteViewScreen,
 } from '@src/modules/Favorites';
+
+import { PeopleHomeScreen } from '@src/modules/People';
+
 import { styles } from './style';
-import { IconHome, IconSettings, IconStar } from '@src/components';
+import { IconTv, IconUsers, IconStar } from '@src/components';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,10 +56,10 @@ const SCREENS_FAVORITES = [
   },
 ];
 
-const SCREENS_SETTINGS = [
+const SCREENS_PEOPLE = [
   {
-    name: SCREENS.PRIVATE.SETTINGS.HOME,
-    component: HomeScreen,
+    name: SCREENS.PRIVATE.PEOPLE.HOME,
+    component: PeopleHomeScreen,
   },
 ];
 
@@ -77,7 +80,7 @@ function BaseNavigatorFavorites() {
 }
 
 function BaseNavigatorSettings() {
-  return withBaseNavigator(SCREENS.PRIVATE.SETTINGS.HOME, SCREENS_SETTINGS, {});
+  return withBaseNavigator(SCREENS.PRIVATE.PEOPLE.HOME, SCREENS_PEOPLE, {});
 }
 
 function PrivateNavigator(initialParams = {}) {
@@ -105,9 +108,9 @@ function PrivateNavigator(initialParams = {}) {
         name={TAB_NAVIGATORS.FAVORITE_TAB_NAVIGATOR}
         component={BaseNavigatorHome}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Shows',
           tabBarIcon: route => (
-            <IconHome color={route?.focused ? route.color : THEME.gray} />
+            <IconTv color={route?.focused ? route.color : THEME.gray} />
           ),
         }}
       />
@@ -128,12 +131,12 @@ function PrivateNavigator(initialParams = {}) {
         }}
       />
       <Tab.Screen
-        name={TAB_NAVIGATORS.SETTINGS_TAB_NAVIGATOR}
+        name={TAB_NAVIGATORS.PEOPLE_TAB_NAVIGATOR}
         component={BaseNavigatorSettings}
         options={{
-          tabBarLabel: 'Settings',
+          tabBarLabel: 'People',
           tabBarIcon: route => (
-            <IconSettings color={route?.focused ? route.color : THEME.gray} />
+            <IconUsers color={route?.focused ? route.color : THEME.gray} />
           ),
         }}
       />

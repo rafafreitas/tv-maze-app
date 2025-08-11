@@ -7,3 +7,5 @@ export { default as IconArrowLeft } from './List/IconArrowLeft';
 export { default as IconChevronDown } from './List/IconChevronDown';
 export { default as IconChevronUp } from './List/IconChevronUp';
 export { default as IconChevronRight } from './List/IconChevronRight';
+export { default as IconTv } from './List/IconTv';
+export { default as IconUsers } from './List/IconUsers';

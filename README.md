@@ -77,7 +77,6 @@ The project follows best coding practices and architecture principles, with spec
 - **React Native**
 - **TypeScript**
 - **TVMaze API**
-- **Biometric Authentication** (Face ID / Fingerprint)
 - **Async Storage** (local storage)
 - **React Navigation** (navigation)
 

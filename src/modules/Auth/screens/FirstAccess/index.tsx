@@ -16,7 +16,6 @@ export default function FirstAccess() {
   const handleLogin = () => {
     changeStack(NAVIGATORS.PRIVATE_NAVIGATOR, SCREENS.PRIVATE.HOME.HOME);
   };
-  const handleCreate = () => {};
 
   return (
     <View style={styles.container}>
@@ -40,12 +39,6 @@ export default function FirstAccess() {
             </View>
             <View style={styles.group}>
               <Button title="Access" onPress={handleLogin} />
-              <Button
-                title="Protect Account"
-                variant="white"
-                type="OUTLINE"
-                onPress={handleCreate}
-              />
             </View>
           </View>
         </SafeAreaView>

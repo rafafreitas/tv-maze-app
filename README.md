@@ -1,97 +1,105 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📺 TV Series App
 
-# Getting Started
+Application developed as part of the React Native challenge, using the [TVMaze API](https://www.tvmaze.com/api) to list and retrieve series and episodes information.  
+The project follows best coding practices and architecture principles, with special attention to UX and performance.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Implemented Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 📃 Series Listing
+- Displays all series available from the API using pagination.
+- Allows searching by series name.
+- Shows **name** and **poster** of each series.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+**Screenshot:**
+<p align="center">
+  <img src="docs/screenshots/home.png" alt="Home" width="300"/>
+</p>
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+### 🎬 Series Details Page
+- Displays detailed series information:
+    - Name
+    - Poster
+    - Air days and time
+    - Genres
+    - Summary
+- Shows the list of episodes grouped by season.
 
-## Step 2: Build and run your app
+**Screenshot:**
+<p align="center">
+  <img src="docs/screenshots/show_view.png" alt="Home show" width="300" style="margin-right: 20px;"/>
+  <img src="docs/screenshots/show_episodes.png" alt="Show details" width="300"/>
+</p>
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
+### 📑 Episodes Listing and Details
+- Lists all episodes of the selected series.
+- On click, displays:
+    - Name
+    - Number
+    - Season
+    - Summary
+    - Image (if available)
 
-```sh
-# Using npm
+**Screenshot:**
+
+<p align="center">
+  <img src="docs/screenshots/show_episodes.png" alt="Show" width="300" style="margin-right: 20px;"/>
+  <img src="docs/screenshots/episode_view.png" alt="Episode details" width="300"/>
+</p>
+
+---
+
+## 💎 Bonus Features Implemented
+
+### ⭐ Favorites
+- Add a series to favorites.
+- Remove a series from favorites.
+- Browse favorite series in alphabetical order.
+- Access series details directly from favorites.
+
+**Screenshot:**
+<p align="center">
+  <img src="docs/screenshots/favorites.png" alt="Show" width="300" style="margin-right: 20px;"/>
+  <img src="docs/screenshots/favorites_2.png" alt="Episode details" width="300"/>
+</p>
+
+---
+
+## 🛠️ Tech Stack
+- **React Native**
+- **TypeScript**
+- **TVMaze API**
+- **Biometric Authentication** (Face ID / Fingerprint)
+- **Async Storage** (local storage)
+- **React Navigation** (navigation)
+
+---
+
+## 📦 Installation & Running
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repository.git
+
+# Enter the project directory
+cd your-repository
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Run on Android
 npm run android
-
-# OR using Yarn
+# or
 yarn android
-```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run on iOS
 npm run ios
-
-# OR using Yarn
+# or
 yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

@@ -10,17 +10,19 @@ import {
   persistReducer,
 } from 'redux-persist';
 import { showSlice } from './show/slice';
+import { favoritesSlice } from './favorites/slice';
 import Tron from './reactotronConfig';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage: AsyncStorage,
-  whitelist: [],
+  whitelist: ['favorites'],
 };
 
 const reducer = combineReducers({
   show: showSlice.reducer,
+  favorites: favoritesSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

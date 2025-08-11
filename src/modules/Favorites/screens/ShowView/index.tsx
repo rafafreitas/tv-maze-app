@@ -5,7 +5,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { navigate } from '@src/router/actions.ts';
 import { SCREENS } from '@src/router/constants';
 import { useAppDispatch, useAppSelector } from '@src/store/hooks';
-import { setFavorite } from '@src/store/favorites/thunks/set';
+import { setFavorite } from '@src/store/favorites/thunks/set.ts';
 
 type ScreenParam = {
   ShowView: {
@@ -13,10 +13,11 @@ type ScreenParam = {
   };
 };
 
-export default function ShowView({
+export default function ShowFavoriteView({
   route,
 }: NativeStackScreenProps<ScreenParam, 'ShowView'>) {
   const { show } = route.params;
+
   const dispatch = useAppDispatch();
   const { ids } = useAppSelector(state => state.favorites);
 
@@ -25,7 +26,7 @@ export default function ShowView({
   };
 
   const onEpisodesViewAction = (episode: ITvMazeEpisode) => {
-    navigate(SCREENS.PRIVATE.HOME.EPISODE_VIEW, { episode: episode });
+    navigate(SCREENS.PRIVATE.FAVORITES.EPISODE_VIEW, { episode: episode });
   };
 
   return (

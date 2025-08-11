@@ -12,6 +12,12 @@ import {
   ShowViewScreen,
   EpisodeViewScreen,
 } from '@src/modules/Home';
+
+import {
+  HomeFavoriteScreen,
+  ShowFavoriteViewScreen,
+  EpisodeFavoriteViewScreen,
+} from '@src/modules/Favorites';
 import { styles } from './style';
 import { IconHome, IconSettings, IconStar } from '@src/components';
 
@@ -35,7 +41,15 @@ const SCREENS_HOME = [
 const SCREENS_FAVORITES = [
   {
     name: SCREENS.PRIVATE.FAVORITES.HOME,
-    component: HomeScreen,
+    component: HomeFavoriteScreen,
+  },
+  {
+    name: SCREENS.PRIVATE.FAVORITES.ITEM_VIEW,
+    component: ShowFavoriteViewScreen,
+  },
+  {
+    name: SCREENS.PRIVATE.FAVORITES.EPISODE_VIEW,
+    component: EpisodeFavoriteViewScreen,
   },
 ];
 

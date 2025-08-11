@@ -1,4 +1,5 @@
 import { Dimensions } from 'react-native';
+import { ITvMazeShow } from '@src/types';
 
 export const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } =
   Dimensions.get('window');
@@ -14,4 +15,10 @@ export const resizeImage = (newWidth: number | null) => {
     width: preparedWidth,
     height: newHeight,
   };
+};
+
+export const orderByName = (show: ITvMazeShow[]): ITvMazeShow[] => {
+  return show.sort((a, b) =>
+    a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }),
+  );
 };

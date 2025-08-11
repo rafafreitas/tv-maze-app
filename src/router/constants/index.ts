@@ -3,14 +3,15 @@ const AUTH_NAVIGATOR_SCREENS = {
 };
 
 const PRIVATE_NAVIGATOR_SCREENS = {
-  FAVORITES: {
-    HOME: 'HomeFavoriteScreen',
-    VIEW: 'ViewFavoriteScreen',
-  },
   HOME: {
     HOME: 'HomeScreen',
     ITEM_VIEW: 'FavoritesViewScreen',
     EPISODE_VIEW: 'EpisodeViewScreen',
+  },
+  FAVORITES: {
+    HOME: 'FavoriteHomeScreen',
+    ITEM_VIEW: 'FavoritesViewScreen',
+    EPISODE_VIEW: 'EpisodeFavoritesViewScreen',
   },
   SETTINGS: {
     HOME: 'SettingsHomeScreen',
